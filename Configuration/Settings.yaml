@@ -1,0 +1,30 @@
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        NeosRulez.Neos.Form.NodeProperty: true
+    userInterface:
+      translation:
+        autoInclude:
+          NeosRulez.Neos.Form.NodeProperty:
+            - 'NodeTypes/*'
+  Form:
+    presets:
+      default:
+        formElementTypes:
+          'NeosRulez.Neos.Form.NodeProperty:NodeProperty':
+            renderingOptions:
+              templatePathPattern: 'resource://NeosRulez.Neos.Form.NodeProperty/Private/Templates/Form/{@type}.html'
+            superTypes:
+              'Neos.Form:FormElement': true
+            properties:
+              elementClassAttribute: form-control
+      bootstrap:
+        formElementTypes:
+          'NeosRulez.Neos.Form.NodeProperty:NodeProperty':
+            renderingOptions:
+              templatePathPattern: 'resource://NeosRulez.Neos.Form.NodeProperty/Private/Templates/Form/{@type}.html'
+            superTypes:
+              'Neos.Form:FormElement': true
+            properties:
+              elementClassAttribute: form-control

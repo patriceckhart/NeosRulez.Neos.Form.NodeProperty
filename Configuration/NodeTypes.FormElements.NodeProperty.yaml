@@ -1,0 +1,49 @@
+'NeosRulez.Neos.Form.NodeProperty:NodeProperty':
+  superTypes:
+    'Neos.Form.Builder:FormElement': true
+  ui:
+    label: Node property
+    icon: fas fa-i-cursor
+    group: form.elements
+    inspector:
+      groups:
+        formElement:
+          icon: fas fa-i-cursor
+    position: end
+  properties:
+    fieldType:
+      type: string
+      defaultValue: 'hidden'
+      ui:
+        label: Field type
+        reloadIfChanged: true
+        inspector:
+          group: formElement
+          position: 1
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'hidden':
+                label: Hidden
+              'text':
+                label: Text
+    readOnly:
+      type: boolean
+      ui:
+        label: Read only
+        reloadIfChanged: true
+        inspector:
+          hidden: 'ClientEval:node.properties.fieldType == "hidden" ? true : false'
+          group: formElement
+          position: 2
+    property:
+      type: string
+      ui:
+        label: Property
+        reloadIfChanged: true
+        inspector:
+          group: formElement
+          position: 3
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            dataSourceIdentifier: neosrulez-neos-form-nodeproperty-nodeproperties

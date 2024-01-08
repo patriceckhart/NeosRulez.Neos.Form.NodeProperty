@@ -1,0 +1,9 @@
+prototype(NeosRulez.Neos.Form.NodeProperty:NodeProperty.Definition) < prototype(Neos.Form.Builder:FormElement.Definition) {
+    formElementType = 'NeosRulez.Neos.Form.NodeProperty:NodeProperty'
+    properties {
+        node = ${node}
+        documentNode = ${documentNode}
+        property = ${node.properties.property}
+        readOnly = ${node.properties.readOnly}
+    }
+}
