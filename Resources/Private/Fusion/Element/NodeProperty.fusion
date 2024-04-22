@@ -3,7 +3,5 @@ prototype(NeosRulez.Neos.Form.NodeProperty:NodeProperty.Definition) < prototype(
     properties {
         node = ${node}
         documentNode = ${documentNode}
-        property = ${node.properties.property}
-        readOnly = ${node.properties.readOnly}
     }
 }

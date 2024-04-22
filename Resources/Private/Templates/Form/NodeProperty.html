@@ -1,10 +1,11 @@
 {namespace form=Neos\Form\ViewHelpers}
+{namespace nodeproperty=NeosRulez\Neos\Form\NodeProperty\ViewHelpers}
 <f:layout name="Neos.Form:Field" />
 <f:section name="field">
 	<f:if condition="{element.properties.fieldType} == 'hidden'">
-		<f:form.hidden property="{element.identifier}" id="{element.uniqueIdentifier}" value="{element.properties.documentNode.properties.{element.properties.property}}" />
+		<f:form.hidden property="{element.identifier}" id="{element.uniqueIdentifier}" value="{nodeproperty:typeToString(propertyValue: '{element.properties.documentNode.properties.{element.properties.property}}', dateTimeFormat: element.properties.dateTimeFormat)}" />
 	</f:if>
 	<f:if condition="{element.properties.fieldType} == 'text'">
-		<f:form.textfield property="{element.identifier}" id="{element.uniqueIdentifier}" class="{element.properties.elementClassAttribute}" readonly="{element.properties.readOnly}" placeholder="{element -> form:translateElementProperty(property: 'placeholder')}" errorClass="{element.properties.elementErrorClassAttribute}" value="{element.properties.documentNode.properties.{element.properties.property}}" />
+		<f:form.textfield property="{element.identifier}" id="{element.uniqueIdentifier}" class="{element.properties.elementClassAttribute}" readonly="{element.properties.readOnly}" placeholder="{element -> form:translateElementProperty(property: 'placeholder')}" errorClass="{element.properties.elementErrorClassAttribute}" value="{nodeproperty:typeToString(propertyValue: '{element.properties.documentNode.properties.{element.properties.property}}', dateTimeFormat: element.properties.dateTimeFormat)}" />
 	</f:if>
 </f:section>

@@ -47,3 +47,12 @@
           editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             dataSourceIdentifier: neosrulez-neos-form-nodeproperty-nodeproperties
+    dateTimeFormat:
+      type: string
+      ui:
+        label: Date format
+        reloadIfChanged: true
+        inspector:
+          hidden: 'ClientEval:node.properties.property ? false : true'
+          group: formElement
+          position: 4
