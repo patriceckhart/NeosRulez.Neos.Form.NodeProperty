@@ -18,12 +18,12 @@ class TypeToStringViewHelper extends AbstractViewHelper
      */
     public function render(): string
     {
-        if($this->getPropertyValueType() === 'object' && $this->getPropertyValueClass() === 'DateTime') {
+        if($this->getPropertyValueType() === 'object' && $this->getPropertyValueClass() === 'DateTime' && $this->getPropertyValue()) {
             return $this->getPropertyValue()->format($this->getDateTimeFormat());
         }
         return $this->getPropertyValue();
     }
-    
+
     /**
      * @return string
      */
@@ -45,7 +45,7 @@ class TypeToStringViewHelper extends AbstractViewHelper
      */
     public function getPropertyValue(): mixed
     {
-        return $this->arguments['propertyValue'];
+        return $this->arguments['propertyValue'] !== null ? $this->arguments['propertyValue'] : '';
     }
 
     /**
